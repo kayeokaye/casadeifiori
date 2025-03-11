@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa dei Fiori - Sign Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #FCE4EC;
+            background-image: url('https://i.imgur.com/NyS8vZU.jpeg');
+            background-position: center center;
+            background-size: cover;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #880E4F;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            color: white;
+            font-size: 3rem;
+            font-family: 'Dancing Script', cursive;
+            margin: 0;
+        }
+
+        /* Sign Up Form Section */
+        .signup-container {
+            background-color: #FFF0F3;
+            padding: 35px;
+            margin: 50px auto;
+            width: 50%;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+
+        .signup-container h2 {
+            font-size: 2.5rem;
+            color: #D81B60;
+            font-family: 'Dancing Script', cursive;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        /* Form Layout */
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .form-row input, .form-row select {
+            width: 100%; /* Allowing the form controls to fill the available space */
+            padding: 12px;
+            font-size: 1.1rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        /* Adjusting width for Age and Gender row */
+        .age-gender-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px; /* Maintain the gap as in the first row */
+        }
+
+        .age-gender-row input,
+        .age-gender-row select {
+            width: 48%; /* Age and Gender each take 48% of the row width */
+            padding: 12px;
+            font-size: 1.1rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        /* Phone number input row */
+        .phone-row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .phone-row input {
+            width: 100%; /* Full width for phone number input */
+            max-width: 100%; /* Ensure phone number is equal to the email's width */
+            padding: 12px;
+            font-size: 1.1rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        /* Added margin to create space between Age/Gender and Phone Number */
+        .phone-row {
+            margin-top: 22px; /* Added margin here for spacing */
+        }
+
+        .or-line {
+            position: relative;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .or-line::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            border-top: 1px solid #ccc;
+            transform: translateY(-50%);
+        }
+
+        .or-line span {
+            background-color: #FFF0F3;
+            padding: 0 10px;
+            font-size: 1rem;
+            color: #D81B60;
+            font-weight: bold;
+            z-index: 1; /* Make sure the text stays in front */
+            position: relative;
+        }
+
+        .form-control:focus {
+            border-color: #D81B60;
+        }
+
+        /* Sign Up Button */
+        .btn-signup {
+            background-color: #C2185B;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            border: none;
+            font-size: 1.2rem;
+            width: 100%;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-signup:hover {
+            background-color: #AD1457;
+        }
+
+        .signup-footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1rem;
+        }
+
+        .signup-footer a {
+            color: #D81B60;
+            text-decoration: none;
+        }
+
+        .signup-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer Section */
+        .footer {
+            background-color: #880E4F;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- Navbar Section -->
+<nav class="navbar">
+    <h1>Casa dei fiori</h1>
+</nav>
+
+<!-- Sign Up Form Section -->
+<div class="signup-container">
+    <h2>Sign Up</h2>
+    <form id="signup-form">
+        <!-- First Row: Last Name, Middle Name, First Name -->
+        <div class="form-row">
+            <input type="text" id="last-name" class="form-control" placeholder="Last Name" required>
+            <input type="text" id="middle-name" class="form-control" placeholder="Middle Name" required>
+            <input type="text" id="first-name" class="form-control" placeholder="First Name" required>
+        </div>
+
+        <!-- Second Row: Age, Gender -->
+        <div class="age-gender-row">
+            <input type="number" id="age" class="form-control" placeholder="Age" required>
+            <select id="gender" class="form-control" required>
+                <option value="">Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <!-- Phone Number Row -->
+        <div class="phone-row">
+            <input type="tel" id="phone" class="form-control" placeholder="Phone Number" required>
+        </div>
+
+        <!-- OR Line -->
+        <div class="or-line">
+            <span>OR</span>
+        </div>
+
+        <!-- Email Address Row -->
+        <div class="form-row">
+            <input type="email" id="email" class="form-control" placeholder="Email Address" required>
+        </div>
+
+        <!-- Sign Up Button -->
+        <button type="submit" class="btn-signup">Sign Up</button>
+    </form>
+
+    <div class="signup-footer">
+        <p>Already have an account?<a href="account.html"> Log in here</a>.</p>
+    </div>
+</div>
+
+<!-- Footer Section -->
+<div class="footer">
+    <p>&copy; 2025 Casa Dei Fiori. All rights reserved.</p>
+    <p>Contact us: contact@casadeifiori.com</p>
+    <p>
+        <a href="#">Facebook</a> |
+        <a href="#">Instagram</a> |
+        <a href="#">Twitter</a>
+    </p>
+</div>
+
+<script>
+    document.getElementById('signup-form').addEventListener('submit', function(event) {
+        event.preventDefault();  // Prevent the form from submitting the default way
+
+        // Redirect to home.html after the form is successfully submitted
+        window.location.href = 'home.html';  // Redirect to the Home page
+    });
+</script>
+
+</body>
+</html>
+
+
